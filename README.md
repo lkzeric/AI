@@ -1,0 +1,1 @@
+In this repo, it includes my graduate work related to some foudation of machine learning and deep learning and my ongoing side projects related to edge AI.
