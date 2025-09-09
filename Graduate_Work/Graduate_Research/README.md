@@ -47,27 +47,11 @@
     - Neural Ex-BP (Learnable extension)
     - After some L-layer updates, apply:
     
-$$
-\begin{aligned}
-\text{upper} &= \; 
-\text{upper} \cdot \alpha_c \;+\;
-\text{previous\_layer} \cdot \beta_c \cdot 
-step\!\left( \left| \text{previous\_layer} \right| - threshold_c \right) \\
-&\quad +\; \text{upper} \cdot 
-\left( 1 - step\!\left( \left| \text{previous\_layer} \right| - threshold_c \right) \right)
-\end{aligned}
-$$
+upper = upper * alpha_c + previous_layer * beta_c * step(|previous_layer| - threshold_c) + upper * (1 - step(|previous_layer| - threshold_c))
 
-$$
-\begin{aligned}
-\text{lower} &= \;
-\text{lower} \cdot \alpha_c \;+\;
-\text{previous\_layer} \cdot \beta_c \cdot 
-step\!\left( \left| \text{previous\_layer} \right| - threshold_c \right) \\
-&\quad +\; \text{lower} \cdot 
-\left( 1 - step\!\left( \left| \text{previous\_layer} \right| - threshold_c \right) \right)
-\end{aligned}
-$$
+lower = lower * alpha_c + previous_layer * beta_c * step(|previous_layer| - threshold_c) + lower * (1 - step(|previous_layer| - threshold_c))
+
+
   - Intuition: 
     - Use a threshold to judge message strength. Apply different scaling for “strong” messages, reducing distortions where vanilla min-sum struggles.
 	
