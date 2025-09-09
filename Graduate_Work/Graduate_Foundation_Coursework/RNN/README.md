@@ -1,44 +1,48 @@
-🧠 What is an RNN?
+# Recurrent Neural Network (RNN)
 
-A Recurrent Neural Network (RNN) is a type of neural network designed to handle sequential data.
-Unlike traditional feedforward neural networks, RNNs have a memory of previous inputs, making them well-suited for tasks where the order of data matters.
+## What is RNN?
+A **Recurrent Neural Network (RNN)** is a type of neural network designed for **sequential data** such as text, speech, or time series.  
+Unlike traditional feedforward networks, RNNs have loops that allow information to persist, giving them a form of "memory."
 
-⸻
+---
 
-📌 Example
+## Key Concepts
+- **Sequential Processing**: Inputs are processed one step at a time.  
+- **Hidden State**: Stores past information and is updated at each step.  
+- **Weight Sharing**: The same weights are applied across all time steps, enabling generalization for sequences of any length.  
 
-Imagine predicting the next word in a sentence:
-Input: “I am going to the …”
-The RNN processes each word sequentially, keeping track of the context. By the time it sees “the”, it uses its memory of earlier words (“I am going to”) to predict “store” or “park”.
+---
 
-⸻
+## How It Works
+At each time step \(t\):  
+- Input: \(x_t\)  
+- Hidden state: \(h_t\)  
+- Output: \(y_t\)  
 
-✅ Advantages
-	•	Good at handling sequential/temporal data (text, speech, time series).
-	•	Shares weights across time steps → fewer parameters.
+The hidden state update combines the **current input** and the **previous hidden state**, making RNNs suitable for tasks with temporal dependencies.
 
-⸻
+---
 
-⚠️ Challenges
-	•	Vanishing / Exploding Gradients: Long sequences make it hard for RNNs to learn dependencies far back in time.
-	•	Slow training compared to feedforward networks.
-	•	Limited memory of long-term dependencies.
+## Strengths
+- Handles sequential/temporal data effectively.  
+- Captures dependencies between elements in a sequence.  
+- Useful for variable-length inputs.  
 
-⸻
+---
 
-🔧 Solutions & Variants
-	•	LSTM (Long Short-Term Memory): Adds gates (input, forget, output) to manage long-term memory.
-	•	GRU (Gated Recurrent Unit): A simpler version of LSTM, also effective at remembering longer contexts.
-	•	Bidirectional RNNs: Process sequences in both directions for more context.
-	•	Attention / Transformers: Modern architectures that overcome RNN limitations.
+## Limitations
+- Struggles with **long-term dependencies** due to vanishing or exploding gradients.  
+- Training can be slow for very long sequences.  
 
-⸻
+---
 
-🌟 Applications
-	•	Natural Language Processing (translation, sentiment analysis, speech recognition).
-	•	Time Series Forecasting (stock prices, weather).
-	•	Sequential event modeling (IoT, medical data).
+## Variants
+- **LSTM (Long Short-Term Memory)**: Adds gates to control information flow and capture long-term patterns.  
+- **GRU (Gated Recurrent Unit)**: A simplified version of LSTM, more efficient while retaining performance.  
 
-⸻
+---
 
-👉 In short: RNNs are neural networks with memory, designed for sequential data.
+## Applications
+- Natural Language Processing (e.g., text generation, translation, sentiment analysis).  
+- Speech recognition.  
+- Time series prediction (finance, weather, sensor data).  
